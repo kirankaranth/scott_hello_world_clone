@@ -1,2 +1,3 @@
-from .conftest import *
 from .TestSuite import *
+from .job import *
+from .conftest import *

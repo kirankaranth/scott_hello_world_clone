@@ -2,7 +2,7 @@
   "metainfo" : {
     "id" : "1",
     "language" : "python",
-    "fabricId" : "332",
+    "fabricId" : "1264",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -160,8 +160,21 @@
           "description" : "",
           "_row_id" : null
         } ],
+        "hints" : [ {
+          "id" : "47810",
+          "alias" : "in0",
+          "hintType" : "none",
+          "propagateColumns" : false
+        }, {
+          "id" : "2322",
+          "alias" : "in1",
+          "hintType" : "none",
+          "propagateColumns" : false
+        } ],
+        "allIn1" : null,
         "activeTab" : "expressions",
-        "columnsSelector" : [ "47810##customer_id", "2322##customer_id", "2322##account_open_date", "47810##order_id", "47810##customer_id", "47810##amount", "2322##first_name", "2322##last_name" ],
+        "columnsSelector" : [ "2322##customer_id", "47810##customer_id", "47810##amount", "2322##last_name", "47810##customer_id", "2322##account_open_date", "2322##first_name", "47810##order_id" ],
+        "allIn0" : null,
         "whereClause" : null,
         "headAlias" : "in0"
       }
@@ -218,7 +231,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
-        "columnsSelector" : [ "94427##account_open_date", "94427##order_id", "94427##customer_id", "94427##amount" ],
+        "importLanguage" : "python",
         "expressions" : [ {
           "target" : "account_length_days",
           "expression" : {
@@ -247,7 +260,10 @@
             "expression" : "amount"
           },
           "description" : ""
-        } ]
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "94427##amount", "94427##account_open_date", "94427##order_id", "94427##customer_id" ]
       }
     },
     "Source_51275" : {
@@ -328,6 +344,7 @@
         "isCustomOutputSchema" : false
       },
       "properties" : {
+        "allIns" : false,
         "doPivot" : false,
         "aggregate" : [ {
           "target" : "orders",
@@ -335,36 +352,38 @@
             "format" : "sql",
             "expression" : "count(order_id)"
           },
-          "description" : ""
+          "description" : "",
+          "_row_id" : null
         }, {
           "target" : "amounts",
           "expression" : {
             "format" : "sql",
             "expression" : "sum(amount)"
           },
-          "description" : ""
+          "description" : "",
+          "_row_id" : null
         }, {
           "target" : "account_length_days",
           "expression" : {
             "format" : "sql",
             "expression" : "first(account_length_days)"
           },
-          "description" : ""
+          "description" : "",
+          "_row_id" : null
         } ],
-        "pivotColumn" : {
-          "format" : "sql",
-          "expression" : "col_name"
-        },
+        "allowSelection" : true,
+        "pivotColumn" : null,
         "pivotValues" : [ ],
-        "activeTab" : "aggregate",
-        "columnsSelector" : [ "42999##customer_id", "42999##order_id", "42999##amount", "42999##account_length_days" ],
+        "activeTab" : "groupBy",
+        "columnsSelector" : [ "42999##account_length_days", "42999##order_id", "42999##amount", "42999##customer_id" ],
         "groupBy" : [ {
           "target" : "customer_id",
           "expression" : {
             "format" : "sql",
             "expression" : "customer_id"
           },
-          "description" : ""
+          "description" : "",
+          "_row_id" : null
         } ]
       }
     }

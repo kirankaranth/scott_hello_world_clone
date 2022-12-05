@@ -1,0 +1,98 @@
+{
+  "unitTests" : [ {
+    "data" : {
+      "42999" : {
+        "values" : [ [ "1084", "1", "26", "586.08" ], [ "1084", "2", "26", "9.85" ], [ "1003", "3", "94", "915.25" ], [ "1263", "4", "65", "556.41" ], [ "1019", "5", "13", "877.45" ], [ "1244", "6", "77", "776.76" ], [ "1244", "7", "77", "843.36" ], [ "999", "8", "64", "71.47" ], [ "1213", "9", "25", "305.39" ], [ "1183", "10", "48", "696.56" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "account_length_days",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "order_id",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "customer_id",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "amount",
+            "type" : "double",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "96556" : {
+        "values" : [ [ "26", "2", "595.9300000000001", "1084" ], [ "94", "1", "915.25", "1003" ], [ "65", "1", "556.41", "1263" ], [ "13", "1", "877.45", "1019" ], [ "77", "2", "1620.12", "1244" ], [ "48", "1", "696.56", "1183" ], [ "64", "1", "71.47", "999" ], [ "25", "1", "305.39", "1213" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "customer_id",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "orders",
+            "type" : "long",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "amounts",
+            "type" : "double",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          }, {
+            "name" : "account_length_days",
+            "type" : "integer",
+            "nullable" : true,
+            "metadata" : {
+              "description" : "",
+              "mappings" : [ ],
+              "tags" : [ ]
+            }
+          } ]
+        },
+        "predicates" : [ ]
+      }
+    },
+    "name" : "Unit Test 0",
+    "testType" : "outputRow",
+    "language" : "python"
+  } ],
+  "language" : "python"
+}
