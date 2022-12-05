@@ -1,0 +1,193 @@
+name: HelloWorld
+description: This is your personal project
+version: 0.0.1-SNAPSHOT
+author: scott+wd@prophecy.io
+language: python
+buildSystem: wheel
+pipelines:
+  pipelines/customers_orders:
+    name: customers_orders
+    description: Aggregates total spending's for each customer
+    author: scott+wd@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2022-12-05 18:50:04'
+    datasets:
+      inputs:
+      - datasets/orders
+      - datasets/customers
+      outputs:
+      - datasets/customers_orders
+    dependencies: {}
+  pipelines/report_top_customers:
+    name: report_top_customers
+    description: Prepare a report based on customers' spending
+    author: scott+wd@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2022-12-05 18:50:04'
+    datasets:
+      inputs:
+      - datasets/customers_orders
+      outputs:
+      - datasets/report
+    dependencies: {}
+  pipelines/join_agg_sort:
+    name: join_agg_sort
+    description: Show an example of joining two datasets (customers and orders), aggregating
+      (sales by customer), sorting (by totals)
+    author: scott+wd@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2022-12-05 18:50:04'
+    datasets:
+      inputs:
+      - datasets/orders
+      - datasets/customers
+      outputs:
+      - datasets/customer_totals
+    dependencies: {}
+  pipelines/farmers-markets-irs:
+    name: farmers-markets-irs
+    description: Exploration of Farmer's Market Locations By US Zip Code
+    author: scott+wd@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2022-12-05 18:50:05'
+    datasets:
+      inputs:
+      - datasets/irs-zipcode-data
+      - datasets/farmers-markets
+      outputs:
+      - datasets/farmers_market_tax_report
+    dependencies: {}
+datasets:
+  datasets/orders:
+    name: orders
+    description: All the orders placed by the customers
+    author: scott+wd@prophecy.io
+    createdAt: '2022-12-05 18:50:03'
+    physicalDatasets:
+      MyWorkdayFabric:
+        fabricId: 1264
+        datasetType: File
+        description: ''
+        author: scott+wd@prophecy.io
+        createdAt: '2022-12-05 18:50:03'
+  datasets/irs-zipcode-data:
+    name: irs-zipcode-data
+    description: Irs zipcode data
+    author: scott+wd@prophecy.io
+    createdAt: '2022-12-05 18:50:04'
+    physicalDatasets:
+      MyWorkdayFabric:
+        fabricId: 1264
+        datasetType: File
+        description: ''
+        author: scott+wd@prophecy.io
+        createdAt: '2022-12-05 18:50:04'
+  datasets/customers_orders:
+    name: customers_orders
+    description: Customers by total of their purchases
+    author: scott+wd@prophecy.io
+    createdAt: '2022-12-05 18:50:04'
+    physicalDatasets:
+      MyWorkdayFabric:
+        fabricId: 1264
+        datasetType: File
+        description: ''
+        author: scott+wd@prophecy.io
+        createdAt: '2022-12-05 18:50:04'
+  datasets/customers:
+    name: customers
+    description: All the customers
+    author: scott+wd@prophecy.io
+    createdAt: '2022-12-05 18:50:04'
+    physicalDatasets:
+      MyWorkdayFabric:
+        fabricId: 1264
+        datasetType: File
+        description: ''
+        author: scott+wd@prophecy.io
+        createdAt: '2022-12-05 18:50:04'
+  datasets/farmers_market_tax_report:
+    name: farmers_market_tax_report
+    description: Farmer's market tax report
+    author: scott+wd@prophecy.io
+    createdAt: '2022-12-05 18:50:04'
+    physicalDatasets:
+      MyWorkdayFabric:
+        fabricId: 1264
+        datasetType: File
+        description: ''
+        author: scott+wd@prophecy.io
+        createdAt: '2022-12-05 18:50:04'
+  datasets/farmers-markets:
+    name: farmers-markets
+    description: Farmer's Market data
+    author: scott+wd@prophecy.io
+    createdAt: '2022-12-05 18:50:04'
+    physicalDatasets:
+      MyWorkdayFabric:
+        fabricId: 1264
+        datasetType: File
+        description: ''
+        author: scott+wd@prophecy.io
+        createdAt: '2022-12-05 18:50:04'
+  datasets/historic_events_flat:
+    name: historic_events_flat
+    description: Historic events flat
+    author: scott+wd@prophecy.io
+    createdAt: '2022-12-05 18:50:04'
+    physicalDatasets:
+      MyWorkdayFabric:
+        fabricId: 1264
+        datasetType: File
+        description: ''
+        author: scott+wd@prophecy.io
+        createdAt: '2022-12-05 18:50:04'
+  datasets/report:
+    name: report
+    description: Final report for the bank
+    author: scott+wd@prophecy.io
+    createdAt: '2022-12-05 18:50:03'
+    physicalDatasets:
+      MyWorkdayFabric:
+        fabricId: 1264
+        datasetType: File
+        description: ''
+        author: scott+wd@prophecy.io
+        createdAt: '2022-12-05 18:50:03'
+  datasets/old_events:
+    name: old_events
+    description: Old events data
+    author: scott+wd@prophecy.io
+    createdAt: '2022-12-05 18:50:04'
+    physicalDatasets:
+      MyWorkdayFabric:
+        fabricId: 1264
+        datasetType: File
+        description: ''
+        author: scott+wd@prophecy.io
+        createdAt: '2022-12-05 18:50:04'
+  datasets/customer_totals:
+    name: customer_totals
+    description: Customers by total of their purchases
+    author: scott+wd@prophecy.io
+    createdAt: '2022-12-05 18:50:03'
+    physicalDatasets:
+      MyWorkdayFabric:
+        fabricId: 1264
+        datasetType: File
+        description: ''
+        author: scott+wd@prophecy.io
+        createdAt: '2022-12-05 18:50:03'
+templates: {}
+jobs: {}
+libraries: []
+subgraphs: {}
+sqlModels: {}
+sqlPipeline: null
+dependencies: '[]'
+projectDependencies: {}
+pipelineConfigurations: {}
