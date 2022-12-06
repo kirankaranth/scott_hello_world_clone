@@ -1,6 +1,6 @@
 name: HelloWorld
 description: This is your personal project
-version: 0.0.1-SNAPSHOT
+version: 0.0.1
 author: scott+wd@prophecy.io
 language: python
 buildSystem: wheel
