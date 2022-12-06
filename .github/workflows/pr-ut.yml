@@ -32,10 +32,10 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip
           pip3 install build pytest wheel pytest-html pyspark prophecy-build-tool
-      - name: Run PBT build
-        run: pbt build --path hello_world
       - name: Run PBT test
         run: pbt test --path hello_world
+      - name: Run PBT build
+        run: pbt build --path hello_world
       - name: Deploy to environment (if merging to main)
         run: pbt deploy --path hello_world
         if: github.ref == 'refs/heads/main'
