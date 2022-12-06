@@ -300,7 +300,7 @@
         "label" : "JoinFarmersMarketsAndIncome",
         "slug" : "JoinFarmersMarketsAndIncome",
         "x" : 1120.0009668674888,
-        "y" : 220,
+        "y" : 204.40000000000003,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -331,6 +331,17 @@
           "joinType" : "right_outer"
         } ],
         "expressions" : [ ],
+        "hints" : [ {
+          "id" : "0PzZXtCLnm_SGiF_p-71U$$z9bc0uiM0-G_CKxKN9R-M",
+          "alias" : "farmers_markets",
+          "hintType" : "none",
+          "propagateColumns" : false
+        }, {
+          "id" : "fHekXRNYqiBvwZhB-tdI2$$Gqb9jitmewtEWa9XnoOXf",
+          "alias" : "tax_data",
+          "hintType" : "none",
+          "propagateColumns" : false
+        } ],
         "allIn1" : false,
         "activeTab" : "conditions",
         "columnsSelector" : [ "fHekXRNYqiBvwZhB-tdI2$$Gqb9jitmewtEWa9XnoOXf##zipcode", "0PzZXtCLnm_SGiF_p-71U$$z9bc0uiM0-G_CKxKN9R-M##zip" ],
