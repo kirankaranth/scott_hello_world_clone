@@ -4,6 +4,11 @@ on:
   push:
   pull_request:
 
+env:
+  DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+  DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+  FABRIC_NAME: ${{ secrets.FABRIC_NAME }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
