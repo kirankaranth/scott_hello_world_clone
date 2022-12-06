@@ -28,6 +28,7 @@ jobs:
       # takes care of it by reading each pipeline's setup.py
       - name: Install dependencies
         run: |
+          env
           python3 -m pip install --upgrade pip
           pip3 install build pytest wheel pytest-html pyspark prophecy-build-tool
       - name: Run PBT build
