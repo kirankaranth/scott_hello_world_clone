@@ -36,11 +36,12 @@
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
-    "visualCodeInterimMode" : "Disabled",
+    "visualCodeInterimMode" : "Full",
     "recordsLimit" : {
       "enabled" : false,
       "value" : 1000
-    }
+    },
+    "topLevelPackage" : ""
   },
   "connections" : [ {
     "id" : "425",

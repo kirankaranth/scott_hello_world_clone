@@ -5,19 +5,6 @@ author: scott+wd@prophecy.io
 language: python
 buildSystem: wheel
 pipelines:
-  pipelines/report_top_customers:
-    name: report_top_customers
-    description: Prepare a report based on customers' spending
-    author: scott+wd@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2022-12-05 18:50:04'
-    datasets:
-      inputs:
-      - datasets/customers_orders
-      outputs:
-      - datasets/report
-    dependencies: {}
   pipelines/join_agg_sort:
     name: join_agg_sort
     description: Show an example of joining two datasets (customers and orders), aggregating
@@ -46,6 +33,19 @@ pipelines:
       - datasets/farmers-markets
       outputs:
       - datasets/farmers_market_tax_report
+    dependencies: {}
+  pipelines/report_top_customers:
+    name: report_top_customers
+    description: Prepare a report based on customers' spending
+    author: scott+wd@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2022-12-05 18:50:04'
+    datasets:
+      inputs:
+      - datasets/customers_orders
+      outputs:
+      - datasets/report
     dependencies: {}
   pipelines/customers_orders:
     name: customers_orders
@@ -183,11 +183,36 @@ datasets:
         author: scott+wd@prophecy.io
         createdAt: '2022-12-05 18:50:03'
 templates: {}
-jobs: {}
+jobs:
+  jobs/Customers_Job:
+    name: Customers_Job
+    description: ''
+    fabricUID: 1264
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 30 15/1 * * ? *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - pipelines/customers_orders
+    - pipelines/report_top_customers
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2022-12-05 23:01:57'
+    author: scott+wd@prophecy.io
 libraries: []
 subgraphs: {}
 sqlModels: {}
 sqlPipeline: null
-dependencies: '[]'
+dependencies: []
 projectDependencies: {}
 pipelineConfigurations: {}
