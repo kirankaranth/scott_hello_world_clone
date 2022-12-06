@@ -25,8 +25,8 @@ class CleanupTest(BaseTestCase):
         )
         dfOutComputed = Cleanup(self.spark, dfIn0)
         assertDFEquals(
-            dfOut.select("account_length_days", "order_id", "customer_id", "amount"),
-            dfOutComputed.select("account_length_days", "order_id", "customer_id", "amount"),
+            dfOut.select("order_id", "customer_id", "amount"),
+            dfOutComputed.select("order_id", "customer_id", "amount"),
             self.maxUnequalRowsToShow
         )
 
