@@ -1,8 +1,6 @@
 name: pull-request testing
 
-on:
-  push:
-  pull_request:
+on: [push]
 
 env:
   DATABRICKS_HOST: ${{ secrets.DATABRICKS_WORKSPACE }}
