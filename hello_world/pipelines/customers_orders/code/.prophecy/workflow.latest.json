@@ -264,7 +264,7 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "94427##amount", "94427##account_open_date", "94427##order_id", "94427##customer_id" ]
+        "columnsSelector" : [ "94427##customer_id", "94427##account_open_date", "94427##amount", "94427##order_id" ]
       }
     },
     "Source_51275" : {
