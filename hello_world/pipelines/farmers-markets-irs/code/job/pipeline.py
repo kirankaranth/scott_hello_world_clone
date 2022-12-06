@@ -32,9 +32,15 @@ def main():
                 .config("spark.sql.legacy.allowUntypedScalaUDF", "true")\
                 .enableHiveSupport()\
                 .appName("Prophecy Pipeline")\
-                .getOrCreate()
+                .getOrCreate()\
+                .newSession()
     Utils.initializeFromArgs(spark, parse_args())
-    MetricsCollector.start(spark)
+    spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/farmers-markets-irs")
+    
+    MetricsCollector.start(
+        spark = spark,
+        pipelineId = spark.conf.get("prophecy.project.id") + "/" + "pipelines/farmers-markets-irs"
+    )
     pipeline(spark)
     MetricsCollector.end(spark)
 
