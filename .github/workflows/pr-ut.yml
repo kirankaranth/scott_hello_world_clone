@@ -1,4 +1,4 @@
-name: pull-request testing
+name: Test and maybe deploy
 
 on:
   push:
