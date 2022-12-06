@@ -20,20 +20,6 @@ pipelines:
       outputs:
       - datasets/customer_totals
     dependencies: {}
-  pipelines/farmers-markets-irs:
-    name: farmers-markets-irs
-    description: Exploration of Farmer's Market Locations By US Zip Code
-    author: scott+wd@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2022-12-05 18:50:05'
-    datasets:
-      inputs:
-      - datasets/irs-zipcode-data
-      - datasets/farmers-markets
-      outputs:
-      - datasets/farmers_market_tax_report
-    dependencies: {}
   pipelines/report_top_customers:
     name: report_top_customers
     description: Prepare a report based on customers' spending
@@ -60,6 +46,20 @@ pipelines:
       - datasets/orders
       outputs:
       - datasets/customers_orders
+    dependencies: {}
+  pipelines/farmers-markets-irs:
+    name: farmers-markets-irs
+    description: Exploration of Farmer's Market Locations By US Zip Code
+    author: scott+wd@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2022-12-05 18:50:05'
+    datasets:
+      inputs:
+      - datasets/farmers-markets
+      - datasets/irs-zipcode-data
+      outputs:
+      - datasets/farmers_market_tax_report
     dependencies: {}
 datasets:
   datasets/orders:
